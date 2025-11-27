@@ -1,4 +1,4 @@
-export const RestaurantsListItemFeedback = ({ title, reviews }) => {
+export const RestaurantsItemFeedback = ({ title, reviews }) => {
     return (
         <div>
             <h3>{title}:</h3>
