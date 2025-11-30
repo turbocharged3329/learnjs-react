@@ -1,0 +1,21 @@
+.r-review-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.r-review-form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.r-review-form-section__label {
+    margin-bottom: 0.5rem;
+}
+
+.r-review-form__actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}

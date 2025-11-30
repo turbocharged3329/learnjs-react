@@ -1,7 +1,9 @@
 import { RCounter } from '@/components/common/RCounter.jsx'
+import { useState } from 'react'
 
 export const RestaurantsItemMenuItem = ({ menuItem }) => {
     const { name, price, ingredients } = menuItem
+    const [count, setCount] = useState(0)
 
     return (
         <li>
@@ -24,7 +26,7 @@ export const RestaurantsItemMenuItem = ({ menuItem }) => {
                 </ul>
             </div>
 
-            <RCounter />
+            <RCounter value={count} onChange={setCount} />
         </li>
     )
 }

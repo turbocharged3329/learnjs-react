@@ -1,8 +1,9 @@
 import { RestaurantsItemMenu } from '@/components/restaurants-block/RestaurantsItemMenu.jsx'
 import { RestaurantsItemFeedback } from '@/components/restaurants-block/RestaurantsItemFeedback.jsx'
+import { RReviewForm } from '@/components/common/RReviewForm/RReviewForm.jsx'
 
 export const RestaurantsItem = ({ restaurant }) => {
-    const { name, menu, reviews } = restaurant
+    const { id, name, menu, reviews } = restaurant
 
     return (
         <section style={{ borderBottom: '1px solid gray' }}>
@@ -19,6 +20,8 @@ export const RestaurantsItem = ({ restaurant }) => {
             ) : (
                 <p>No feedback</p>
             )}
+
+            <RReviewForm restaurantId={id} />
         </section>
     )
 }

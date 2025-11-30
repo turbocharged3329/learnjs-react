@@ -1,22 +1,18 @@
-import { useState } from 'react'
-
-export const RCounter = () => {
-    const [counter, setCounter] = useState(0)
-
+export const RCounter = ({ value, onChange, minValue = 0, maxValue = 5 }) => {
     function increment() {
-        if (counter === 5) {
+        if (value === maxValue) {
             return
         }
 
-        setCounter(counter + 1)
+        onChange(value + 1)
     }
 
     function decrement() {
-        if (counter === 0) {
+        if (value === minValue) {
             return
         }
 
-        setCounter(counter - 1)
+        onChange(value - 1)
     }
 
     return (
@@ -26,18 +22,18 @@ export const RCounter = () => {
                 style={{
                     marginRight: '1rem',
                 }}
-                disabled={counter <= 0}
+                disabled={value <= minValue}
                 onClick={decrement}
             >
                 -
             </button>
-            {counter}
+            {value}
             <button
                 type="button"
                 style={{
                     marginLeft: '1rem',
                 }}
-                disabled={counter >= 5}
+                disabled={value >= maxValue}
                 onClick={increment}
             >
                 +

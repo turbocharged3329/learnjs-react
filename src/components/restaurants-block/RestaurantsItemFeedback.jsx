@@ -8,7 +8,7 @@ export const RestaurantsItemFeedback = ({ title, reviews }) => {
                         <b>
                             {feedbackItem.user} ({feedbackItem.rating})
                         </b>
-                        <p>{feedbackItem.text}</p>
+                        <p>{feedbackItem.feedback_text}</p>
                     </li>
                 ))}
             </ul>
