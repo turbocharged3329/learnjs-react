@@ -3,12 +3,12 @@ import {
     RATING_VARIANTS,
     FEEDBACK_FORM_ACTIONS,
 } from '@/constants/restauratns.js'
-import { useReducer, useEffect } from 'react'
+import { useReducer } from 'react'
 import { RCounter } from '@/components/common/RCounter.jsx'
 
 const INITIAL_FORM = {
     name: '',
-    feedback_text: '',
+    feedbackText: '',
     rating: RATING_VARIANTS[0].value,
 }
 
@@ -24,7 +24,7 @@ function formReducer(state, action) {
         case 'UPDATE_FEEDBACK_TEXT': {
             return {
                 ...state,
-                feedback_text: action.payload.feedback_text,
+                feedbackText: action.payload.feedbackText,
             }
         }
 
@@ -47,14 +47,8 @@ function formReducer(state, action) {
     }
 }
 
-export const RReviewForm = ({ restaurantId }) => {
+export const RReviewForm = () => {
     const [form, dispatch] = useReducer(formReducer, INITIAL_FORM)
-
-    useEffect(() => {
-        dispatch({
-            type: FEEDBACK_FORM_ACTIONS.CLEAR_FORM,
-        })
-    }, [restaurantId])
 
     function handleNameUpdate(value) {
         dispatch({
@@ -67,7 +61,7 @@ export const RReviewForm = ({ restaurantId }) => {
         dispatch({
             type: FEEDBACK_FORM_ACTIONS.UPDATE_FEEDBACK_TEXT,
             payload: {
-                feedback_text: value,
+                feedbackText: value,
             },
         })
     }
@@ -82,7 +76,7 @@ export const RReviewForm = ({ restaurantId }) => {
     }
 
     return (
-        <form className="r-review-form">
+        <form className="r-review-form" onSubmit={(e) => e.preventDefault()}>
             <section className="r-review-form-section">
                 <label className="r-review-form-section__label" htmlFor="name">
                     Имя
@@ -101,7 +95,7 @@ export const RReviewForm = ({ restaurantId }) => {
                 </label>
                 <textarea
                     id="text"
-                    value={form.feedback_text}
+                    value={form.feedbackText}
                     onChange={(event) =>
                         handleFeedbackTextUpdate(event.target.value)
                     }

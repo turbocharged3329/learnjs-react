@@ -20,8 +20,8 @@ export const RestaurantsItem = ({ restaurant }) => {
             ) : (
                 <p>No feedback</p>
             )}
-
-            <RReviewForm restaurantId={id} />
+            {/* key используется для перерисовки формы при смене таба */}
+            <RReviewForm key={id} />
         </section>
     )
 }

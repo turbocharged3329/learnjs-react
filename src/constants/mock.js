@@ -26,13 +26,13 @@ export const restaurants = [
             {
                 id: '5909796d-5030-4e36-adec-68b8f9ec2d96',
                 user: 'Antony',
-                feedback_text: 'Not bad',
+                feedbackText: 'Not bad',
                 rating: 5,
             },
             {
                 id: '429dea85-11dd-4054-a31e-c60c92e17255',
                 user: 'Sam',
-                feedback_text: 'No burgers',
+                feedbackText: 'No burgers',
                 rating: 3,
             },
         ],
@@ -58,20 +58,20 @@ export const restaurants = [
             {
                 id: '53b642d7-5e86-4717-a466-0640a1dee076',
                 user: 'Diana',
-                feedback_text: 'Perfect Margarita',
+                feedbackText: 'Perfect Margarita',
                 rating: 5,
             },
             {
                 id: 'c27ab88e-375c-4e98-aa94-8a180150a797',
                 user: 'Sam',
-                feedback_text:
+                feedbackText:
                     'No burgers again. But Chef Pizza is the best one',
                 rating: 4,
             },
             {
                 id: 'abc0c5e1-cd57-4f0a-99d9-00e6b4533b3a',
                 user: 'Lolly',
-                feedback_text: 'Good for lunch',
+                feedbackText: 'Good for lunch',
                 rating: 5,
             },
         ],
@@ -103,7 +103,7 @@ export const restaurants = [
             {
                 id: '53b642d7-5e86-4717-a466-0640a1dee076',
                 user: 'Agata',
-                feedback_text: 'Best bakery',
+                feedbackText: 'Best bakery',
                 rating: 5,
             },
         ],
@@ -129,14 +129,14 @@ export const restaurants = [
             {
                 id: '5db6247b-ab1c-49db-be1f-8dd27fd38b81',
                 user: 'Sam',
-                feedback_text:
+                feedbackText:
                     'Finally! This place is amazing place for breakfast, lunch, dinner and supper',
                 rating: 5,
             },
             {
                 id: '381b0c31-6360-43ff-80d1-581a116159d8',
                 user: 'Rebeca',
-                feedback_text: 'Meat here is extremely delicious',
+                feedbackText: 'Meat here is extremely delicious',
                 rating: 5,
             },
         ],
