@@ -8,7 +8,7 @@ export const getScrollProgress = () => {
         document.documentElement.clientHeight
     )
 
-    let progress = Math.floor(
+    let progress = Math.ceil(
         (window.scrollY /
             (scrollHeight - document.documentElement.clientHeight)) *
             100

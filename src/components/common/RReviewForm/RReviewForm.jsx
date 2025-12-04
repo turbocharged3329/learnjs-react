@@ -1,10 +1,11 @@
-import './r-review-form.css'
+import cn from 'classnames'
+import styles from './r-review-form.module.css'
 import {
     RATING_VARIANTS,
     FEEDBACK_FORM_ACTIONS,
 } from '@/constants/restauratns.js'
 import { useReducer } from 'react'
-import { RCounter } from '@/components/common/RCounter.jsx'
+import { RCounter } from '@/components/common/RCounter/RCounter.jsx'
 
 const INITIAL_FORM = {
     name: '',
@@ -42,7 +43,7 @@ function formReducer(state, action) {
         }
 
         default: {
-            throw new Error('Неизвестный тип действия с формой')
+            throw new Error('Unknown form action type')
         }
     }
 }
@@ -76,10 +77,16 @@ export const RReviewForm = () => {
     }
 
     return (
-        <form className="r-review-form" onSubmit={(e) => e.preventDefault()}>
-            <section className="r-review-form-section">
-                <label className="r-review-form-section__label" htmlFor="name">
-                    Имя
+        <form
+            className={cn(styles['r-review-form'])}
+            onSubmit={(e) => e.preventDefault()}
+        >
+            <section className={cn(styles['r-review-form-section'])}>
+                <label
+                    className={cn(styles['r-review-form-section__label'])}
+                    htmlFor="name"
+                >
+                    Name
                 </label>
                 <input
                     id="name"
@@ -89,9 +96,12 @@ export const RReviewForm = () => {
                 />
             </section>
 
-            <section className="r-review-form-section">
-                <label className="r-review-form-section__label" htmlFor="text">
-                    Отзыв
+            <section className={cn(styles['r-review-form-section'])}>
+                <label
+                    className={cn(styles['r-review-form-section__label'])}
+                    htmlFor="text"
+                >
+                    Review
                 </label>
                 <textarea
                     id="text"
@@ -102,8 +112,10 @@ export const RReviewForm = () => {
                 />
             </section>
 
-            <section className="r-review-form-section">
-                <label className="r-review-form-section__label">Рейтинг</label>
+            <section className={cn(styles['r-review-form-section'])}>
+                <label className={cn(styles['r-review-form-section__label'])}>
+                    Rating
+                </label>
                 <div>
                     <RCounter
                         minValue={1}
@@ -113,16 +125,16 @@ export const RReviewForm = () => {
                 </div>
             </section>
 
-            <section className="r-review-form__actions">
+            <section className={cn(styles['r-review-form__actions'])}>
                 <button
                     type="button"
                     onClick={() =>
                         dispatch({ type: FEEDBACK_FORM_ACTIONS.CLEAR_FORM })
                     }
                 >
-                    Очистить
+                    Clear
                 </button>
-                <button type="submit">Отправить</button>
+                <button type="submit">Send</button>
             </section>
         </form>
     )
