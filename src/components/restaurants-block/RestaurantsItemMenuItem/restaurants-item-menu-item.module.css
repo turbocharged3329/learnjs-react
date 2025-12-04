@@ -1,0 +1,43 @@
+.restaurants-item-menu-item {
+    padding: 0.9rem 1rem;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.restaurants-item-menu-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.restaurants-item-menu-item__name {
+    font-weight: 500;
+}
+
+.restaurants-item-menu-item__price {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+}
+
+.restaurants-item-menu-item__ingredients-label {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+.restaurants-item-menu-item__ingredients-list {
+    margin-top: 0.15rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.restaurants-item-menu-item__footer {
+    display: flex;
+    justify-content: flex-end;
+}

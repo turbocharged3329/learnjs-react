@@ -1,0 +1,64 @@
+.r-review-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.r-review-form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.r-review-form-section__label {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+.r-review-form__actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.r-review-form {
+    margin-top: 1.25rem;
+    padding: 1.1rem 1.25rem 1.3rem;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.r-review-form-section textarea,
+.r-review-form-section input {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--color-border-subtle);
+    padding: 0.55rem 0.7rem;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--color-text-primary);
+}
+
+.r-review-form-section textarea:focus,
+.r-review-form-section input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.r-review-form__actions button {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+}
+
+.r-review-form__actions button[type='submit'] {
+    background: var(--color-accent);
+    color: #111111;
+}
