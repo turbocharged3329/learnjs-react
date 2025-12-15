@@ -1,10 +1,12 @@
 import { RCounter } from '@/components/common/RCounter/RCounter.jsx'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import styles from './restaurants-item-menu-item.module.css'
+import { UserContext } from '@/components/user-context/user-context.jsx'
 
 export const RestaurantsItemMenuItem = ({ menuItem }) => {
     const { name, price, ingredients } = menuItem
     const [count, setCount] = useState(0)
+    const { user } = useContext(UserContext)
 
     return (
         <li className={styles['restaurants-item-menu-item']}>
@@ -36,9 +38,11 @@ export const RestaurantsItemMenuItem = ({ menuItem }) => {
                 </ul>
             </div>
 
-            <div className={styles['restaurants-item-menu-item__footer']}>
-                <RCounter value={count} onChange={setCount} />
-            </div>
+            {user ? (
+                <div className={styles['restaurants-item-menu-item__footer']}>
+                    <RCounter value={count} onChange={setCount} />
+                </div>
+            ) : null}
         </li>
     )
 }

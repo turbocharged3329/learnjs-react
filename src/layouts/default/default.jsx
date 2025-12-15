@@ -3,9 +3,11 @@ import { RSwitcher } from '@/components/common/RSwitcher/RSwitcher.jsx'
 import { useContext } from 'react'
 import { ThemeContext } from '@/components/theme-context/theme-context.jsx'
 import { COLOR_THEME_VALUES } from '@/constants/index.js'
+import { UserContext } from '@/components/user-context/user-context.jsx'
 
 export const DefaultLayout = ({ title, children }) => {
     const { theme, setTheme } = useContext(ThemeContext)
+    const { user, login, logout } = useContext(UserContext)
 
     const isLight = theme === COLOR_THEME_VALUES.light
 
@@ -22,11 +24,36 @@ export const DefaultLayout = ({ title, children }) => {
             <div className={styles['layout-inner']}>
                 <header className={styles.header}>
                     <h1 className={styles['header-title']}>{title}</h1>
-                    <RSwitcher
-                        className={styles['header-switcher']}
-                        checked={isLight}
-                        onChange={handleThemeToggle}
-                    />
+                    <div className={styles['header-right']}>
+                        <RSwitcher
+                            className={styles['header-switcher']}
+                            checked={isLight}
+                            onChange={handleThemeToggle}
+                        />
+
+                        {!user ? (
+                            <button
+                                type="button"
+                                className={styles['auth-button']}
+                                onClick={login}
+                            >
+                                Sign in
+                            </button>
+                        ) : (
+                            <>
+                                <span className={styles['user-name']}>
+                                    {user.name}
+                                </span>
+                                <button
+                                    type="button"
+                                    className={styles['auth-button']}
+                                    onClick={logout}
+                                >
+                                    Sign out
+                                </button>
+                            </>
+                        )}
+                    </div>
                 </header>
 
                 <main className={styles.content}>{children}</main>

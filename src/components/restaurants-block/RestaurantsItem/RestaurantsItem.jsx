@@ -1,10 +1,13 @@
 import { RestaurantsItemMenu } from '@/components/restaurants-block/RestaurantsItemMenu/RestaurantsItemMenu.jsx'
 import { RestaurantsItemFeedback } from '@/components/restaurants-block/RestaurantsItemFeedback/RestaurantsItemFeedback.jsx'
 import { RReviewForm } from '@/components/common/RReviewForm/RReviewForm.jsx'
+import { useContext } from 'react'
+import { UserContext } from '@/components/user-context/user-context.jsx'
 import styles from './restaurants-item.module.css'
 
 export const RestaurantsItem = ({ restaurant }) => {
     const { id, name, menu, reviews } = restaurant
+    const { user } = useContext(UserContext)
 
     return (
         <section className={styles['restaurants-item']}>
@@ -35,7 +38,7 @@ export const RestaurantsItem = ({ restaurant }) => {
                         </p>
                     )}
                     {/* key используется для перерисовки формы при смене таба */}
-                    <RReviewForm key={id} />
+                    {user ? <RReviewForm key={id} /> : null}
                 </div>
             </div>
         </section>
