@@ -32,6 +32,10 @@
     letter-spacing: 0.04em;
 }
 
+.header-switcher {
+    margin-left: auto;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -45,5 +49,3 @@
     color: var(--color-text-muted);
     text-align: right;
 }
-
-

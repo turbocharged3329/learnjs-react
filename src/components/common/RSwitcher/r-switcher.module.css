@@ -1,0 +1,44 @@
+.r-switcher {
+    width: 54px;
+    height: 32px;
+    padding: 0;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-strong);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.r-switcher:hover {
+    border-color: var(--color-accent);
+}
+
+.r-switcher__track {
+    position: absolute;
+    inset: 3px;
+    border-radius: 999px;
+    background: var(--color-bg-muted);
+}
+
+.r-switcher__thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    position: absolute;
+    left: 4px;
+    background: var(--color-accent);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    transition:
+        left 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.r-switcher--light .r-switcher__thumb {
+    left: 26px;
+}
