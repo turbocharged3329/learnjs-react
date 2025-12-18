@@ -19,9 +19,9 @@ export const RScrollProgress = () => {
     }, [])
 
     return (
-        <div className="r-scroll-progress">
+        <div className="rScrollProgress">
             <div
-                className="r-scroll-progress__filler"
+                className="rScrollProgressFiller"
                 style={{ width: `${scrollProgress}%` }}
             />
         </div>

@@ -9,29 +9,15 @@ export const RestaurantsItemMenuItem = ({ menuItem }) => {
     const { user } = useContext(UserContext)
 
     return (
-        <li className={styles['restaurants-item-menu-item']}>
-            <div className={styles['restaurants-item-menu-item__header']}>
-                <p className={styles['restaurants-item-menu-item__name']}>
-                    {name}
-                </p>
-                <b className={styles['restaurants-item-menu-item__price']}>
-                    ${price}
-                </b>
+        <li className={styles.root}>
+            <div className={styles.header}>
+                <p className={styles.name}>{name}</p>
+                <b className={styles.price}>${price}</b>
             </div>
 
             <div>
-                <p
-                    className={
-                        styles['restaurants-item-menu-item__ingredients-label']
-                    }
-                >
-                    Ingredients
-                </p>
-                <ul
-                    className={
-                        styles['restaurants-item-menu-item__ingredients-list']
-                    }
-                >
+                <p className={styles.ingredientsLabel}>Ingredients</p>
+                <ul className={styles.ingredientsList}>
                     {ingredients.map((ingredient) => (
                         <li key={String(ingredient)}>{ingredient}</li>
                     ))}
@@ -39,7 +25,7 @@ export const RestaurantsItemMenuItem = ({ menuItem }) => {
             </div>
 
             {user ? (
-                <div className={styles['restaurants-item-menu-item__footer']}>
+                <div className={styles.footer}>
                     <RCounter value={count} onChange={setCount} />
                 </div>
             ) : null}

@@ -17,9 +17,9 @@ export const RestaurantsBlock = () => {
     )
 
     return (
-        <section className={styles['restaurants-block']}>
-            <div className={styles['restaurants-block__tabs-card']}>
-                <div className={styles['restaurants-block__tabs']}>
+        <section className={styles.root}>
+            <div className={styles.tabsCard}>
+                <div className={styles.tabs}>
                     {restaurantsTabsList.map((tab) => {
                         const isActive = tab.id === activeRestaurantTabId
 
@@ -28,9 +28,8 @@ export const RestaurantsBlock = () => {
                                 key={tab.id}
                                 type="button"
                                 className={cn(
-                                    styles['restaurants-block__tab'],
-                                    isActive &&
-                                        styles['restaurants-block__tab--active']
+                                    styles.tab,
+                                    isActive && styles.tabActive
                                 )}
                                 onClick={() => setActiveRestaurantTabId(tab.id)}
                             >
@@ -41,7 +40,7 @@ export const RestaurantsBlock = () => {
                 </div>
             </div>
 
-            <div className={styles['restaurants-block__content-card']}>
+            <div className={styles.contentCard}>
                 <RestaurantsItem
                     restaurant={restaurants.find(
                         (restaurant) => restaurant.id === activeRestaurantTabId

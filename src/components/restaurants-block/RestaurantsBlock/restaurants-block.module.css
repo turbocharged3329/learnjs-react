@@ -1,10 +1,10 @@
-.restaurants-block {
+.root {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
 }
 
-.restaurants-block__tabs-card {
+.tabsCard {
     padding: 0;
     border-radius: 0;
     background: transparent;
@@ -14,18 +14,18 @@
     gap: 1rem;
 }
 
-.restaurants-block__tabs-title {
+.tabsTitle {
     font-size: 0.9rem;
     color: var(--color-text-secondary);
 }
 
-.restaurants-block__tabs {
+.tabs {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.restaurants-block__tab {
+.tab {
     padding: 0.4rem 0.9rem;
     border-radius: 999px;
     border: 1px solid var(--color-border-subtle);
@@ -40,18 +40,18 @@
         transform 0.08s ease;
 }
 
-.restaurants-block__tab:hover {
+.tab:hover {
     background: var(--color-bg-muted);
     color: var(--color-text-primary);
 }
 
-.restaurants-block__tab--active {
+.tabActive {
     background: var(--color-accent);
     border-color: var(--color-accent);
     color: #111111;
 }
 
-.restaurants-block__content-card {
+.contentCard {
     padding: 1.5rem 1.75rem;
     border-radius: var(--radius-lg);
     background: var(--color-bg-elevated);

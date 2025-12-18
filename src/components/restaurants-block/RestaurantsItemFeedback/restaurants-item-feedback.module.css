@@ -1,33 +1,33 @@
-.restaurants-item-feedback {
+.root {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
 
-.restaurants-item-feedback__title {
+.title {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--color-text-secondary);
 }
 
-.restaurants-item-feedback__list {
+.list {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
 
-.restaurants-item-feedback__item {
+.item {
     padding: 0.75rem 0.85rem;
     border-radius: var(--radius-md);
     background: var(--color-bg-muted);
 }
 
-.restaurants-item-feedback__item-user {
+.itemUser {
     font-weight: 500;
 }
 
-.restaurants-item-feedback__item-text {
+.itemText {
     margin-top: 0.15rem;
     font-size: 0.85rem;
     color: var(--color-text-secondary);

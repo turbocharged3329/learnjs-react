@@ -5,13 +5,13 @@ export const RSwitcher = ({ className, checked, onChange }) => {
     return (
         <button
             type="button"
-            className={cn(styles['r-switcher'], className, {
-                [styles['r-switcher--light']]: checked,
+            className={cn(styles.root, className, {
+                [styles.rSwitcherLight]: checked,
             })}
             onClick={onChange}
         >
-            <span className={styles['r-switcher__track']} />
-            <span className={styles['r-switcher__thumb']} />
+            <span className={styles.rSwitcherTrack} />
+            <span className={styles.rSwitcherThumb} />
         </button>
     )
 }

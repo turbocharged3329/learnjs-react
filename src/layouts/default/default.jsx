@@ -21,12 +21,12 @@ export const DefaultLayout = ({ title, children }) => {
 
     return (
         <div className={styles.layout}>
-            <div className={styles['layout-inner']}>
+            <div className={styles.layoutInner}>
                 <header className={styles.header}>
-                    <h1 className={styles['header-title']}>{title}</h1>
-                    <div className={styles['header-right']}>
+                    <h1 className={styles.headerTitle}>{title}</h1>
+                    <div className={styles.headerRight}>
                         <RSwitcher
-                            className={styles['header-switcher']}
+                            className={styles.headerSwitcher}
                             checked={isLight}
                             onChange={handleThemeToggle}
                         />
@@ -34,19 +34,19 @@ export const DefaultLayout = ({ title, children }) => {
                         {!user ? (
                             <button
                                 type="button"
-                                className={styles['auth-button']}
+                                className={styles.authButton}
                                 onClick={login}
                             >
                                 Sign in
                             </button>
                         ) : (
                             <>
-                                <span className={styles['user-name']}>
+                                <span className={styles.userName}>
                                     {user.name}
                                 </span>
                                 <button
                                     type="button"
-                                    className={styles['auth-button']}
+                                    className={styles.authButton}
                                     onClick={logout}
                                 >
                                     Sign out

@@ -1,4 +1,4 @@
-.r-switcher {
+.root {
     width: 54px;
     height: 32px;
     padding: 0;
@@ -14,18 +14,18 @@
         border-color 0.2s ease;
 }
 
-.r-switcher:hover {
+.root:hover {
     border-color: var(--color-accent);
 }
 
-.r-switcher__track {
+.rSwitcherTrack {
     position: absolute;
     inset: 3px;
     border-radius: 999px;
     background: var(--color-bg-muted);
 }
 
-.r-switcher__thumb {
+.rSwitcherThumb {
     width: 24px;
     height: 24px;
     border-radius: 999px;
@@ -39,6 +39,6 @@
         box-shadow 0.2s ease;
 }
 
-.r-switcher--light .r-switcher__thumb {
+.rSwitcherLight .rSwitcherThumb {
     left: 26px;
 }

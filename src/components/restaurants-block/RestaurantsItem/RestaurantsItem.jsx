@@ -10,19 +10,17 @@ export const RestaurantsItem = ({ restaurant }) => {
     const { user } = useContext(UserContext)
 
     return (
-        <section className={styles['restaurants-item']}>
-            <header className={styles['restaurants-item__header']}>
-                <h2 className={styles['restaurants-item__title']}>{name}</h2>
+        <section className={styles.root}>
+            <header className={styles.header}>
+                <h2 className={styles.title}>{name}</h2>
             </header>
 
-            <div className={styles['restaurants-item__grid']}>
+            <div className={styles.grid}>
                 <div>
                     {menu.length > 0 ? (
                         <RestaurantsItemMenu title="Menu" menu={menu} />
                     ) : (
-                        <p className={styles['restaurants-item__empty']}>
-                            No menu
-                        </p>
+                        <p className={styles.empty}>No menu</p>
                     )}
                 </div>
 
@@ -33,9 +31,7 @@ export const RestaurantsItem = ({ restaurant }) => {
                             reviews={reviews}
                         />
                     ) : (
-                        <p className={styles['restaurants-item__empty']}>
-                            No feedback
-                        </p>
+                        <p className={styles.empty}>No feedback</p>
                     )}
                     {/* key используется для перерисовки формы при смене таба */}
                     {user ? <RReviewForm key={id} /> : null}
