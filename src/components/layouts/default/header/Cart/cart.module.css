@@ -2,8 +2,6 @@
     padding: 0.4rem 0.9rem;
     border-radius: 999px;
     border: 1px solid var(--color-border-subtle);
-    background: rgba(255, 255, 255, 0.02);
-    color: var(--color-text-secondary);
     font-size: 0.85rem;
     cursor: pointer;
     transition:
@@ -11,15 +9,12 @@
         border-color 0.15s ease,
         color 0.15s ease,
         transform 0.08s ease;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #111111;
 }
 
 .root:hover {
     background: var(--color-bg-muted);
     color: var(--color-text-primary);
-}
-
-.active {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: #111111;
 }

@@ -17,7 +17,7 @@ export const RestaurantsTab = ({ restaurantId, ...props }) => {
     return (
         <button
             type="button"
-            className={cn(styles.root, { [styles.tabActive]: props.isActive })}
+            className={cn(styles.root, { [styles.active]: props.isActive })}
             onClick={props.onClick}
         >
             {name}

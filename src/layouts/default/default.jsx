@@ -1,7 +1,8 @@
 import styles from './default.module.css'
 
-import { ThemeSwitcher } from '../../components/layouts/default/theme-switcher'
-import { UserAuthBlock } from '../../components/layouts/default/UserAuthBlock/user-auth-block.jsx'
+import { ThemeSwitcher } from '../../components/layouts/default/header/theme-switcher'
+import { UserAuthBlock } from '../../components/layouts/default/header/UserAuthBlock/user-auth-block.jsx'
+import { Cart } from '../../components/layouts/default/header/Cart/Cart.jsx'
 
 export const DefaultLayout = ({ title, children }) => {
     return (
@@ -13,6 +14,7 @@ export const DefaultLayout = ({ title, children }) => {
                     <div className={styles.headerRight}>
                         <ThemeSwitcher className={styles.headerSwitcher} />
                         <UserAuthBlock />
+                        <Cart />
                     </div>
                 </header>
 
