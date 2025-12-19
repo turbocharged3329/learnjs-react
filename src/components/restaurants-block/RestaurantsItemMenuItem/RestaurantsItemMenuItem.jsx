@@ -1,12 +1,21 @@
+import styles from './restaurants-item-menu-item.module.css'
 import { RCounter } from '@/components/common/RCounter/RCounter.jsx'
 import { useContext, useState } from 'react'
-import styles from './restaurants-item-menu-item.module.css'
 import { UserContext } from '@/components/user-context/user-context.jsx'
+import { useSelector } from 'react-redux'
+import { selectDishById } from '@/redux/entities/dishes/slice.js'
 
-export const RestaurantsItemMenuItem = ({ menuItem }) => {
-    const { name, price, ingredients } = menuItem
-    const [count, setCount] = useState(0)
+export const RestaurantsItemMenuItem = ({ menuDishId }) => {
     const { user } = useContext(UserContext)
+    const [count, setCount] = useState(0)
+
+    const dish = useSelector((state) => selectDishById(state, menuDishId))
+
+    if (!dish) {
+        return null
+    }
+
+    const { name, price, ingredients } = dish
 
     return (
         <li className={styles.root}>

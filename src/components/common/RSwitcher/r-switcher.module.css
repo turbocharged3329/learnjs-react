@@ -1,4 +1,4 @@
-.root {
+.rSwitcher {
     width: 54px;
     height: 32px;
     padding: 0;
@@ -14,7 +14,7 @@
         border-color 0.2s ease;
 }
 
-.root:hover {
+.rSwitcher:hover {
     border-color: var(--color-accent);
 }
 

@@ -19,7 +19,7 @@ export const RCounter = ({ value, onChange, minValue = 0, maxValue = 5 }) => {
     }
 
     return (
-        <div className={styles.root}>
+        <div className={styles.rCounter}>
             <RCounterButton disabled={value <= minValue} onClick={decrement}>
                 -
             </RCounterButton>

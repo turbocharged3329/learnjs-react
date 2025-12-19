@@ -1,50 +1,38 @@
-import { restaurants } from '@/constants/mock.js'
-import { RestaurantsItem } from '../RestaurantsItem/RestaurantsItem.jsx'
 import { useState } from 'react'
-import cn from 'classnames'
 import styles from './restaurants-block.module.css'
-
-const restaurantsTabsList = restaurants.map((restaurant) => {
-    return {
-        id: restaurant.id,
-        name: restaurant.name,
-    }
-})
+import { RestaurantItemContainer } from '../RestaurantsItem/RestaurantItemContainer.jsx'
+import { RestaurantsTab } from '../RestaurantsTab/RestaurantsTab.jsx'
+import { useSelector } from 'react-redux'
+import { selectRestaurantIds } from '@/redux/entities/restaurants/slice.js'
 
 export const RestaurantsBlock = () => {
+    const restaurantsIds = useSelector(selectRestaurantIds)
+
     const [activeRestaurantTabId, setActiveRestaurantTabId] = useState(
-        restaurantsTabsList[0].id
+        restaurantsIds[0]
     )
 
     return (
         <section className={styles.root}>
             <div className={styles.tabsCard}>
                 <div className={styles.tabs}>
-                    {restaurantsTabsList.map((tab) => {
-                        const isActive = tab.id === activeRestaurantTabId
-
+                    {restaurantsIds.map((id) => {
                         return (
-                            <button
-                                key={tab.id}
-                                type="button"
-                                className={cn(
-                                    styles.tab,
-                                    isActive && styles.tabActive
-                                )}
-                                onClick={() => setActiveRestaurantTabId(tab.id)}
-                            >
-                                {tab.name}
-                            </button>
+                            <RestaurantsTab
+                                key={id}
+                                restaurantId={id}
+                                isActive={id === activeRestaurantTabId}
+                                onClick={() => setActiveRestaurantTabId(id)}
+                            />
                         )
                     })}
                 </div>
             </div>
 
             <div className={styles.contentCard}>
-                <RestaurantsItem
-                    restaurant={restaurants.find(
-                        (restaurant) => restaurant.id === activeRestaurantTabId
-                    )}
+                <RestaurantItemContainer
+                    key={activeRestaurantTabId}
+                    restaurantId={activeRestaurantTabId}
                 />
             </div>
         </section>
