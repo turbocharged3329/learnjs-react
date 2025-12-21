@@ -4,11 +4,11 @@ export const RCounterButton = ({ disabled, onClick, children }) => {
     return (
         <button
             type="button"
-            className={styles['r-counter__button']}
+            className={styles.button}
             disabled={disabled}
             onClick={onClick}
         >
-            <span className={styles['r-counter__button-icon']}>{children}</span>
+            <span className={styles.buttonIcon}>{children}</span>
         </button>
     )
 }

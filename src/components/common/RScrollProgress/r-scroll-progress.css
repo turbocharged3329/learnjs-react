@@ -1,4 +1,4 @@
-.r-scroll-progress {
+.rScrollProgress {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     z-index: 50;
 }
 
-.r-scroll-progress__filler {
+.rScrollProgressFiller {
     background: var(--color-accent);
     height: 100%;
     width: 0;

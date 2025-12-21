@@ -1,4 +1,4 @@
-.r-counter {
+.rCounter {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
@@ -8,7 +8,7 @@
     color: var(--color-text-primary);
 }
 
-.r-counter__button {
+.button {
     width: 32px;
     height: 32px;
     border-radius: 999px;
@@ -26,22 +26,26 @@
         transform 0.1s ease;
 }
 
-.r-counter__button:hover:not(:disabled) {
+.button:hover:not(:disabled) {
     background: var(--color-accent-soft);
     border-color: var(--color-accent);
     color: #111111;
     transform: translateY(-1px);
 }
 
-.r-counter__button:disabled {
+.button:disabled {
     opacity: 0.45;
     cursor: default;
 }
 
-.r-counter__value {
+.value {
     min-width: 1.5rem;
     text-align: center;
     font-weight: 500;
 }
 
-
+.buttonIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

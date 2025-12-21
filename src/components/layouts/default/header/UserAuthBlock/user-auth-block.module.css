@@ -1,0 +1,20 @@
+.userName {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.authButton {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-strong);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--color-text-primary);
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.authButton:hover {
+    border-color: var(--color-accent);
+}

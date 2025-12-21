@@ -1,4 +1,3 @@
-import cn from 'classnames'
 import styles from './r-review-form.module.css'
 import {
     RATING_VARIANTS,
@@ -78,12 +77,12 @@ export const RReviewForm = () => {
 
     return (
         <form
-            className={cn(styles['r-review-form'])}
+            className={styles.reviewForm}
             onSubmit={(e) => e.preventDefault()}
         >
-            <section className={cn(styles['r-review-form-section'])}>
+            <section className={styles.reviewFormSection}>
                 <label
-                    className={cn(styles['r-review-form-section__label'])}
+                    className={styles.reviewFormLabel}
                     htmlFor="name"
                 >
                     Name
@@ -96,9 +95,9 @@ export const RReviewForm = () => {
                 />
             </section>
 
-            <section className={cn(styles['r-review-form-section'])}>
+            <section className={styles.reviewFormSection}>
                 <label
-                    className={cn(styles['r-review-form-section__label'])}
+                    className={styles.reviewFormLabel}
                     htmlFor="text"
                 >
                     Review
@@ -112,10 +111,8 @@ export const RReviewForm = () => {
                 />
             </section>
 
-            <section className={cn(styles['r-review-form-section'])}>
-                <label className={cn(styles['r-review-form-section__label'])}>
-                    Rating
-                </label>
+            <section className={styles.reviewFormSection}>
+                <label className={styles.reviewFormLabel}>Rating</label>
                 <div>
                     <RCounter
                         minValue={1}
@@ -125,7 +122,7 @@ export const RReviewForm = () => {
                 </div>
             </section>
 
-            <section className={cn(styles['r-review-form__actions'])}>
+            <section className={styles.reviewFormActions}>
                 <button
                     type="button"
                     onClick={() =>

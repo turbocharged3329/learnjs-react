@@ -1,32 +1,32 @@
-.restaurants-item {
+.root {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
 }
 
-.restaurants-item__header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.restaurants-item__title {
+.title {
     font-size: 1.1rem;
     font-weight: 600;
 }
 
-.restaurants-item__meta {
+.meta {
     font-size: 0.8rem;
     color: var(--color-text-muted);
 }
 
-.restaurants-item__grid {
+.grid {
     display: grid;
     gap: 1rem;
     grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
 }
 
-.restaurants-item__empty {
+.empty {
     font-size: 0.85rem;
     color: var(--color-text-muted);
 }
