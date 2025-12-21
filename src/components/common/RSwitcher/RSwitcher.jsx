@@ -5,7 +5,7 @@ export const RSwitcher = ({ className, checked, onChange }) => {
     return (
         <button
             type="button"
-            className={cn(styles.root, className, {
+            className={cn(styles.rSwitcher, className, {
                 [styles.rSwitcherLight]: checked,
             })}
             onClick={onChange}

@@ -77,7 +77,7 @@ export const RReviewForm = () => {
 
     return (
         <form
-            className={styles.root}
+            className={styles.reviewForm}
             onSubmit={(e) => e.preventDefault()}
         >
             <section className={styles.reviewFormSection}>
