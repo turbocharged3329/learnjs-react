@@ -1,3 +1,5 @@
+@import '@/assets/css/ui/tab-item.module.css';
+
 .root {
     display: flex;
     flex-direction: column;
@@ -17,16 +19,5 @@
 
 .meta {
     font-size: 0.8rem;
-    color: var(--color-text-muted);
-}
-
-.grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
-}
-
-.empty {
-    font-size: 0.85rem;
     color: var(--color-text-muted);
 }
