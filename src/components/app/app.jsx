@@ -8,6 +8,9 @@ import { RestaurantsPage } from '@/pages/restaurants/RestauratnsPage.jsx'
 import { RestaurantDetail } from '../restaurant-detail/RestaurantDetail'
 import { RestaurantDetailMenuTab } from '../restaurant-detail/tabs/RestaurantDetailMenuTab/RestaurantDetailMenuTab'
 import { RestaurantDetailFeedbackTab } from '../restaurant-detail/tabs/RestaurantDetailFeedbackTab/RestaurantDetailFeedbackTab'
+import { DishPage } from '@/pages/dish/DishPage.jsx'
+import { DefaultLayout } from '@/layouts/default/default.jsx'
+import { BackButton } from '@/components/layouts/default/header/back-button.jsx'
 
 export const App = () => {
     return (
@@ -16,6 +19,7 @@ export const App = () => {
                 <UserContextProvider>
                     <BrowserRouter>
                         <Routes>
+                            <Route path="*" element={<Navigate to="/" />} />
                             <Route index element={<HomePage />} />
                             <Route
                                 path="/restaurants"
@@ -45,6 +49,17 @@ export const App = () => {
                                     />
                                 </Route>
                             </Route>
+                            <Route
+                                path="/dish/:id"
+                                element={
+                                    <DefaultLayout
+                                        title="Dish"
+                                        headerLeft={<BackButton />}
+                                    >
+                                        <DishPage />
+                                    </DefaultLayout>
+                                }
+                            />
                         </Routes>
                     </BrowserRouter>
                 </UserContextProvider>
