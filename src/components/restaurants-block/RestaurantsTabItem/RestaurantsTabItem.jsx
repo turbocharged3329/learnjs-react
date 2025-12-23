@@ -1,9 +1,10 @@
+import styles from '@/assets/css/ui/tab-item.module.css'
 import { useSelector } from 'react-redux'
 import { selectRestaurantById } from '@/redux/entities/restaurants/slice'
+import { NavLink } from 'react-router'
 import cn from 'classnames'
-import styles from './restaurant-tab.module.css'
 
-export const RestaurantsTab = ({ restaurantId, ...props }) => {
+export const RestaurantsTabItem = ({ restaurantId }) => {
     const restaurant = useSelector((state) =>
         selectRestaurantById(state, restaurantId)
     )
@@ -15,12 +16,13 @@ export const RestaurantsTab = ({ restaurantId, ...props }) => {
     const { name } = restaurant
 
     return (
-        <button
-            type="button"
-            className={cn(styles.root, { [styles.active]: props.isActive })}
-            onClick={props.onClick}
+        <NavLink
+            className={({ isActive }) =>
+                cn(styles.tabItem, isActive && styles.active)
+            }
+            to={`/restaurants/${restaurantId}`}
         >
             {name}
-        </button>
+        </NavLink>
     )
 }

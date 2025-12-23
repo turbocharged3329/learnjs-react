@@ -1,4 +1,4 @@
-.root {
+.tabItem {
     padding: 0.4rem 0.9rem;
     border-radius: 999px;
     border: 1px solid var(--color-border-subtle);
@@ -13,12 +13,12 @@
         transform 0.08s ease;
 }
 
-.root:hover {
+.tabItem:hover {
     background: var(--color-bg-muted);
     color: var(--color-text-primary);
 }
 
-.active {
+.tabItem.active {
     background: var(--color-accent);
     border-color: var(--color-accent);
     color: #111111;
